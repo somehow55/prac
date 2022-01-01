@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" href="#">
+    <meta charset="UTF-8">
+    <title>나의 첫 WEBPAGE</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        function get_ajax() {
+            $.ajax({
+                type: "GET",
+                url: "/test?title_give=봄날은간다",
+                data: {},
+                success: function (response) {
+                    console.log(response)
+                }
+            })
+        }
+
+        function post_ajax() {
+            $.ajax({
+                type: "POST",
+                url: "/test",
+                data: {title_give: '김윤아'},
+                success: function (response) {
+                    console.log(response['msg'])
+                }
+            })
+        }
+
+    </script>
+</head>
+<body>
+<h1>나의 첫 웹페이지</h1>
+<button onclick="get_ajax()"> get 버튼 만들기</button>
+<button onclick="post_ajax()"> post 버튼 만들기</button>
+</body>
+</html>
